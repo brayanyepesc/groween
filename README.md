@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Clonar el proyecto
 
-## Getting Started
+Primero, debes ubicar la carpeta donde quieres clonar este repositorio en tu consola de comandos y aplicar el siguiente comando
 
-First, run the development server:
+```
+git clone https://github.com/brayanyepesc/groween.git
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Una vez descargado el proyecto, ábrelo en tu editor de código e instala las dependencias
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```
+npm install
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+```
 
-## Learn More
+Luego, copia el archivo .env.example a un archivo en la misma ruta .env y agrega: (usando xampp, antes debes iniciar APACHE y MYSQL)
 
-To learn more about Next.js, take a look at the following resources:
+USER: usuario
+PORT: puerto
+NAME: nombre de la base de datos
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+DATABASE_URL="mysql://USER@localhost:PORT/NAME"
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+```
 
-## Deploy on Vercel
+y ejecuta el siguiente comando
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```
+npx prisma db push
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+```
