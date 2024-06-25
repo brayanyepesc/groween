@@ -11,7 +11,7 @@ export const Hero = () => {
         objectFit="contain"
         className="opacity-100"
       />
-      <h1 className="text-black text-xl md:text-[60px] bg-white shadow-md rounded-xl p-1 font-bold absolute bg-clip-text text-transparent bg-gradient-to-r from-green-groween to-blue-groween">
+      <h1 className="text-black md:text-[60px] text-[20px] bg-white shadow-md rounded-xl p-1 font-bold absolute bg-clip-text text-transparent bg-gradient-to-r from-green-groween to-blue-groween">
         Grow your own planet with us
       </h1>
     </div>
