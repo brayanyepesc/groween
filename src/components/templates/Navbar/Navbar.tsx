@@ -14,7 +14,7 @@ export const Navbar = () => {
                 />
                 <h2 className="hover:text-green-groween transition-all">Groween</h2>
             </Link>
-            <Link href='/autenticacion/ingresar' className="rounded-xl p-2 text-white bg-gradient-to-tr from-green-groween to-blue-groween shadow-lg">Get started</Link>
+            <Link href='/auth/login' className="rounded-xl p-2 text-white bg-gradient-to-tr from-green-groween to-blue-groween shadow-lg">Get started</Link>
         </div>
     </nav>
   )

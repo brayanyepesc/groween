@@ -1,2 +1,3 @@
 export * from "./Navbar/Navbar";
-export * from "./Map/Map";
+export * from "./ProtectRoutes/ProtectRoutes";
+export * from "./NotAuthenticated/NotAuthenticated";

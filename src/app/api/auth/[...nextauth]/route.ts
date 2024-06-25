@@ -23,11 +23,11 @@ export const nextAuthOptions: NextAuthOptions = {
     })        
   ],
   pages: {
-    signIn: "/autenticacion/ingresar"
+    signIn: "/auth/login"
   },
   callbacks: {
     async redirect() {
-      return '/plataforma'
+      return '/platform'
     }
   }
 };

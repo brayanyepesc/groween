@@ -14,7 +14,7 @@ export const Sidebar = () => {
     const router = useRouter();
     const handleLogout = async () => {
         await signOut({ redirect: false });
-        router.push('/ingresar');
+        router.push('/');
     };
 
     return (
