@@ -1,6 +1,6 @@
 import Image from "next/image"
 import Link from "next/link"
-import GroweenLogo from "@/assets/images/GroweenIsotipo.png"
+import GroweenLogo from "@/assets/logos/GroweenIsotipo.png"
 
 export const Navbar = () => {
   return (
