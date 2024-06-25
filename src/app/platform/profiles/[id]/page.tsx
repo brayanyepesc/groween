@@ -19,7 +19,7 @@ export default async function ProfileDetails ({ params }: { params: { id: string
                 <h2>Details</h2>
                 <Link href='/platform/profiles' className="flex-row-center gap-2 bg-gradient-to-r from-blue-groween to-green-groween p-1 rounded text-white"><LuArrowBigLeft className="text-white"/>Volver</Link>
             </div>
-            <ul className="flex-col-center mt-28 w-1/2 mx-auto bg-white space-y-2 rounded p-10">
+            <ul className="flex-col-center w-1/2 mx-auto bg-white space-y-2 rounded p-10">
                 <h1 className="text-3xl mb-5 bg-clip-text text-transparent bg-gradient-to-r from-blue-groween to-green-groween">Recycler Details</h1>
                 <li className="flex-row-between w-full bg-gray-100 p-2 rounded">
                     <span className="text-blue-groween font-bold">Id</span>
@@ -41,35 +41,33 @@ export default async function ProfileDetails ({ params }: { params: { id: string
                     <span className="text-blue-groween font-bold">Contact</span>
                     <span>{recycler.contact}</span>
                 </li>
-                <li className="flex-row-between w-full p-2 rounded">
-                    <Link href="/" className="bg-blue-groween rounded p-1 text-white">Editar</Link>
-                    <Link href="/" className="bg-red-500 rounded p-1 text-white">Eliminar</Link>
-                </li>
             </ul>
-            {/* <table className="w-full">
-                <tbody className="w-full">
-                    <tr className="flex-row-between">
-                        <td>Id</td>
-                        <td>{recycler.id}</td>
-                    </tr>
-                    <tr>
-                        <td>Names</td>
-                        <td>{recycler.names}</td>
-                    </tr>
-                    <tr>
-                        <td>Age</td>
-                        <td>{recycler.age}</td>
-                    </tr>
-                    <tr>
-                        <td>Address</td>
-                        <td>{recycler.address}</td>
-                    </tr>
-                    <tr>
-                        <td>Contact</td>
-                        <td>{recycler.contact}</td>
-                    </tr>
-                </tbody>
-            </table> */}
+            {
+                recycler.materials.length > 0 ? (
+                    <ul>
+                        <h2 className="text-center text-3xl mb-5 bg-clip-text text-transparent bg-gradient-to-r from-blue-groween to-green-groween">Assigned Materials</h2>
+                        <li className="grid grid-cols-4 place-items-center w-full bg-green-groween p-2 rounded my-2">
+                            <span className="text-white font-bold">Id</span>
+                            <span className="text-white font-bold">Description</span>
+                            <span className="text-white font-bold">Date</span>
+                            <span className="text-white font-bold">Quantity</span>
+                        </li>
+                        {
+                            recycler.materials.map((material: any) => {
+                                const date = new Date(material.date)
+                                return (
+                                    <li key={material.id} className="grid grid-cols-4 place-items-center w-full bg-gray-100 p-2 rounded my-2">
+                                        <span className="text-blue-groween font-bold">{material.id}</span>
+                                        <span>{material.description}</span>
+                                        <span>{date.toLocaleDateString('es-ES')}</span>
+                                        <span>{material.quantity}</span>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
+                ) : (<h2>This user doeen't have material assigned</h2>)
+            }
         </main>
     )
 }
