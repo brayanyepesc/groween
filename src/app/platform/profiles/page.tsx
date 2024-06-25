@@ -16,7 +16,7 @@ export default async function Dashboard (){
         <main className="bg-white w-full p-2 md:p-10">
             <div className="flex-row-between">
                 <h1>List</h1>
-                <p>Volver</p>
+                <Link href="/" className="p-2 bg-gradient-to-r from-green-groween to-blue-groween text-white rounded">Back</Link>
             </div>
             {/* ESCRITORIO */}
             <table className="w-full hidden md:table border p-5 shadow-md rounded mt-10">
