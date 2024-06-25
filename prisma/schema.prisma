@@ -35,5 +35,5 @@ model Material {
   date              DateTime
   quantity          Int
   recyclerId        Int
-  recycler        Recycler @relation(fields: [recyclerId], references: [id])
+  recycler          Recycler @relation(fields: [recyclerId], references: [id])
 }

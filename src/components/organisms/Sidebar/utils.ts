@@ -5,7 +5,8 @@ export const sidebarItems = [
     {
         id: 1,
         icon: LuHome,
-        text: "Dashboard",
+        text: "Maps",
+        link: "/platform/maps",
         active: true,
     },
     {
@@ -13,7 +14,7 @@ export const sidebarItems = [
         icon: LuUser,
         text: "Profiles",
         active: false,
-        link: "/plataforma/profiles"
+        link: "/platform/profiles"
     },
     {
         id: 3,
