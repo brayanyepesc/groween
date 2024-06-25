@@ -1,10 +1,9 @@
-import { on } from "events";
-import { LuCalendar, LuHome, LuLogOut, LuSettings, LuUser } from "react-icons/lu";
+import { LuMap, LuSettings, LuUser } from "react-icons/lu";
 
 export const sidebarItems = [
     {
         id: 1,
-        icon: LuHome,
+        icon: LuMap,
         text: "Maps",
         link: "/platform/maps",
         active: true,

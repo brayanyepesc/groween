@@ -23,7 +23,7 @@ export default function Ingresar() {
   return (
     <main className="w-full h-screen flex-col-center">
       <h1 className="text-5xl bg-clip-text text-transparent bg-gradient-to-r from-green-groween to-blue-groween">Login</h1>
-      <p className="my-4">Welcome back, we are excited to have you here!.</p>
+      <p className="my-4 text-center">Welcome back, we are excited to have you here!.</p>
       <form onSubmit={handleSubmit(onSubmit)} className="shadow-lg rounded p-20 space-y-6">
         <div className="w-full flex flex-col">
           <label htmlFor="email" className="text-gray-400 text-sm mb-2">Email</label>

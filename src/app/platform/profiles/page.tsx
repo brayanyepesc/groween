@@ -13,12 +13,13 @@ async function getData() {
 export default async function Dashboard (){
     const recyclers = await getData();
     return (
-        <main className="bg-white w-full p-10">
+        <main className="bg-white w-full p-2 md:p-10">
             <div className="flex-row-between">
                 <h1>List</h1>
                 <p>Volver</p>
             </div>
-            <table className="w-full border p-5 shadow-md rounded mt-10">
+            {/* ESCRITORIO */}
+            <table className="w-full hidden md:table border p-5 shadow-md rounded mt-10">
                 <thead className="bg-blue-groween rounded text-white text-sm">
                     <tr>
                         <th className="py-2">Id</th>
@@ -46,6 +47,21 @@ export default async function Dashboard (){
                     }
                 </tbody>
             </table>
+
+            {/* MOBILE */}
+            <div className="flex-col-center md:hidden space-y-4">
+                {
+                    recyclers.map((recycler: any) => (
+                        <div className="flex flex-col border-b p-2 shadow-md" key={recycler.id}>
+                            <p>{recycler.names}</p>
+                            <p>{recycler.age} años</p>
+                            <p>{recycler.address}</p>
+                            <p>{recycler.contact}</p>
+                            <Link href={`/platform/profiles/${recycler.id}`} className="p-1 border text-white bg-green-groween">Details</Link>
+                        </div>
+                    ))
+                }
+            </div>
         </main>
     )
 }
