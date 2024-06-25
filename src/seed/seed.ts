@@ -2,6 +2,14 @@ const { PrismaClient } = require('@prisma/client');
 
 const prisma = new PrismaClient();
 
+const recyclers = [
+  { names: 'John Dow', email: "john@example.com", age: 23, address: 'Calle 25', contact: '+57 3200213832' },
+  { names: 'Jane Doe', email: "jane@example.com", age: 30, address: 'Avenida 10', contact: '+57 3101234567' },
+  { names: 'Sam Smith', email: "sam@example.com", age: 27, address: 'Carrera 15', contact: '+57 3157654321' },
+  { names: 'Alice Johnson', email: "alicia@example.com", age: 22, address: 'Calle 50', contact: '+57 3209876543' },
+  { names: 'Bob Brown', email: "bob@example.com", age: 35, address: 'Avenida 20', contact: '+57 3001239876' }
+];
+
 async function main() {
   
   await prisma.user.create({
@@ -9,6 +17,10 @@ async function main() {
       email: 'alice@example.com',
       code: 'xyz123',
     },
+  });
+
+  await prisma.recycler.createMany({
+    data: recyclers,
   });
 
 }

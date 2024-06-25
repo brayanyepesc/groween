@@ -14,7 +14,16 @@ datasource db {
 }
 
 model User {
-  id    Int     @id @default(autoincrement())
-  email String  @unique
-  code  String?
+  id        Int     @id @default(autoincrement())
+  email     String  @unique
+  code      String?
+}
+
+model Recycler {
+  id        Int     @id @default(autoincrement())
+  names     String?
+  age       Int?
+  email     String  @unique
+  address   String?
+  contact   String?
 }
