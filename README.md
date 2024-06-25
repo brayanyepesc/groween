@@ -1,4 +1,4 @@
-## Clonar el proyecto
+## Preparar el proyecto
 
 Primero, debes ubicar la carpeta donde quieres clonar este repositorio en tu consola de comandos y aplicar el siguiente comando
 
@@ -31,3 +31,14 @@ y ejecuta el siguiente comando
 npx prisma db push
 
 ```
+## Ingresar
+
+Para ingresar debes hacer lo siguiente ya que solo está funcional el ingreso y no el registro, debes ejecutar el siguiente comando para crear el user test
+
+```
+npm run seed
+
+```
+
+luego, ingresa con el correo: alice@example.com y el code: xyz123
+
