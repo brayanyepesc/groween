@@ -10,6 +10,21 @@ const recyclers = [
   { names: 'Bob Brown', email: "bob@example.com", age: 35, address: 'Avenida 20', contact: '+57 3001239876' }
 ];
 
+const materials = [
+  { description: 'Plastic', date: new Date(), quantity: 10, recyclerId: 1 },
+  { description: 'Glass', date: new Date(), quantity: 10, recyclerId: 1 },
+  { description: 'Plastic', date: new Date(), quantity: 10, recyclerId: 1 },
+  { description: 'Glass', date: new Date(), quantity: 10, recyclerId: 2 },
+  { description: 'Plastic', date: new Date(), quantity: 10, recyclerId: 2 },
+  { description: 'Glass', date: new Date(), quantity: 10, recyclerId: 2 },
+  { description: 'Plastic', date: new Date(), quantity: 10, recyclerId: 3 },
+  { description: 'Glass', date: new Date(), quantity: 10, recyclerId: 3 },
+  { description: 'Plastic', date: new Date(), quantity: 10, recyclerId: 3 },
+  { description: 'Glass', date: new Date(), quantity: 10, recyclerId: 4 },
+  { description: 'Plastic', date: new Date(), quantity: 10, recyclerId: 4 },
+  { description: 'Glass', date: new Date(), quantity: 10, recyclerId: 5 },
+]
+
 async function main() {
   
   await prisma.user.create({
@@ -21,6 +36,10 @@ async function main() {
 
   await prisma.recycler.createMany({
     data: recyclers,
+  });
+
+  await prisma.material.createMany({
+    data: materials,
   });
 
 }
