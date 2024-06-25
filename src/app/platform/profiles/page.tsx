@@ -1,4 +1,5 @@
 import axios from "axios";
+import Link from "next/link";
 
 async function getData() {
     const res = await axios.get('http://localhost:3000/api/recyclers')
@@ -38,7 +39,7 @@ export default async function Dashboard (){
                                 <td className="py-2">{recycler.address}</td>
                                 <td>{recycler.contact}</td>
                                 <td className="py-2">
-                                    <button className="p-1 rounded bg-green-groween">Details</button>
+                                    <Link className="p-1 rounded bg-green-groween" href={`/platform/profiles/${recycler.id}`}>Details</Link>
                                 </td>
                             </tr>
                         ))
