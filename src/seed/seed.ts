@@ -28,7 +28,7 @@ const materials = [
 async function main() {
   await prisma.user.create({
     data: {
-      email: 'alice@example.com',
+      email: 'admin@admin.com',
       code: 'xyz123',
     },
   });
