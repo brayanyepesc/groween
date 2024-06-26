@@ -20,5 +20,6 @@ export const sidebarItems = [
         icon: LuSettings,
         text: "Configuración",
         active: false,
+        link: "/platform/configuration"
     }
 ]
