@@ -1,0 +1,5 @@
+{
+    "version": 2,
+    "builds": [{ "src": "./src", "use": "@vercel/node" }],
+    "postinstall": "prisma generate && npm run seed"
+}
