@@ -26,6 +26,11 @@ const materials = [
 ];
 
 async function main() {
+
+  await prisma.user.deleteMany({});
+  await prisma.material.deleteMany({});
+  await prisma.recycler.deleteMany({});
+  
   await prisma.user.create({
     data: {
       email: 'admin@admin.com',
@@ -54,9 +59,6 @@ async function main() {
 
   console.log('Database seeded');
 
-  // await prisma.user.deleteMany({});
-  // await prisma.material.deleteMany({});
-  // await prisma.recycler.deleteMany({});
 }
 
 main()
