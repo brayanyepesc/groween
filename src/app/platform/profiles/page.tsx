@@ -1,8 +1,9 @@
 import axios from "axios";
 import Link from "next/link";
+import { NextPublicApiUrl } from "@/shared/env";
 
 async function getData() {
-    const res = await axios.get(`${process.env.VERCEL_URL}/api/recyclers`)
+    const res = await axios.get(`${NextPublicApiUrl}/api/recyclers`)
     if (res.status === 200) {
         return res.data
     } else {
@@ -11,6 +12,7 @@ async function getData() {
 }
 
 export default async function Dashboard (){
+    if(!NextPublicApiUrl) return null;
     const recyclers = await getData();
     return (
         <main className="bg-white w-full p-2 md:p-10">

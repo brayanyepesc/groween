@@ -3,6 +3,7 @@ import axios from "axios";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { NextPublicApiUrl } from "@/shared/env";
 
 interface RegisterNewUserProps {
     email: string;
@@ -15,7 +16,7 @@ export default function CreateUser() {
 
   const onSubmit: SubmitHandler<RegisterNewUserProps> = async (data) => {
     const { email, code } = data;
-    const user = await axios.post(`${process.env.VERCEL_URL}/api/users/create`, { email, code })
+    const user = await axios.post(`${NextPublicApiUrl}/api/users/create`, { email, code })
     if(user.status === 200) {
       alert('User created successfully')
     }

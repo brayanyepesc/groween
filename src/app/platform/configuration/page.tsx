@@ -1,9 +1,10 @@
 import { DeleteUserBtn } from "@/components/atoms";
 import axios from "axios";
 import Link from "next/link";
+import { NextPublicApiUrl } from "@/shared/env";
 
 async function getData() {
-    const res = await axios.get(`${process.env.VERCEL_URL}/api/users`)
+    const res = await axios.get(`${NextPublicApiUrl}/api/users`)
     if (res.status === 200) {
         return res.data
     } else {
