@@ -6,7 +6,7 @@ import React from 'react'
 export const DeleteUserBtn = ({id}: {id: number}) => {
     const router = useRouter();
     const handleAction = async () => {
-        const res = await axios.delete(`${process.env.GROWEEN_APP_URL}/api/users/delete/${id}`)
+        const res = await axios.delete(`${process.env.VERCEL_ENV}/api/users/delete/${id}`)
         if (res.status === 200) {
             alert('User deleted')
             router.refresh();
