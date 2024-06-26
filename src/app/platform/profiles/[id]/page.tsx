@@ -3,7 +3,7 @@ import Link from "next/link";
 import { LuArrowBigLeft, LuArrowUpLeft } from "react-icons/lu";
 
 async function getData(id: string) {
-    const res = await axios.get(`${process.env.VERCEL_ENV}/api/recyclers/${id}`)
+    const res = await axios.get(`${process.env.VERCEL_URL}/api/recyclers/${id}`)
     if (res.status === 200) {
         return res.data
     } else {

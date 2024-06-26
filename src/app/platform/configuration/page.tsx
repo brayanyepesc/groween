@@ -3,7 +3,7 @@ import axios from "axios";
 import Link from "next/link";
 
 async function getData() {
-    const res = await axios.get(`${process.env.VERCEL_ENV}/api/users`)
+    const res = await axios.get(`${process.env.VERCEL_URL}/api/users`)
     if (res.status === 200) {
         return res.data
     } else {
