@@ -2,7 +2,7 @@ import axios from "axios";
 import Link from "next/link";
 
 async function getData() {
-    const res = await axios.get('http://localhost:3000/api/recyclers')
+    const res = await axios.get(`${process.env.GROWEEN_APP_URL}/api/recyclers`)
     if (res.status === 200) {
         return res.data
     } else {

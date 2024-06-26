@@ -15,7 +15,7 @@ export default function CreateUser() {
 
   const onSubmit: SubmitHandler<RegisterNewUserProps> = async (data) => {
     const { email, code } = data;
-    const user = await axios.post('http://localhost:3000/api/users/create', { email, code })
+    const user = await axios.post(`${process.env.GROWEEN_APP_URL}/api/users/create`, { email, code })
     if(user.status === 200) {
       alert('User created successfully')
     }
