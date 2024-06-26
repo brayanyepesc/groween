@@ -66,7 +66,7 @@ export default async function ProfileDetails ({ params }: { params: { id: string
                             })
                         }
                     </ul>
-                ) : (<h2>This user doeen't have material assigned</h2>)
+                ) : (<h2>This user does not have material assigned</h2>)
             }
         </main>
     )
