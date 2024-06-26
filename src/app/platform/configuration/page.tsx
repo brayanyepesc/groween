@@ -13,6 +13,7 @@ async function getData() {
 }
 
 export default async function Configuration (){
+    if(!NextPublicApiUrl) return null;
     const users = await getData();
     return (
         <main className="bg-white w-full p-2 md:p-10">
