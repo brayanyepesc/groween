@@ -5,13 +5,7 @@ import { NextPublicApiUrl } from "@/shared/env";
 
 async function getData(id: string) {
     try {
-        const res = await axios.get(`${NextPublicApiUrl}/api/recyclers/${id}`, {
-            headers: {
-                'Cache-Control': 'no-cache',
-                'Pragma': 'no-cache',
-                'Expires': '0',
-            }
-        });
+        const res = await axios.get(`${NextPublicApiUrl}/api/recyclers/${id}`);
         if (res.status === 200) {
             return res.data;
         } else {
