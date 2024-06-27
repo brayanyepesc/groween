@@ -42,7 +42,7 @@ export default async function Dashboard (){
                                 <td className="py-2">{recycler.address}</td>
                                 <td>{recycler.contact}</td>
                                 <td className="py-2">
-                                    <Link className="p-1 rounded bg-green-groween" href={`/platform/profiles/${recycler.id}`}>Details</Link>
+                                    <Link className="p-1 rounded bg-green-groween" href={`/platform/profiles/${String(recycler.id)}`}>Details</Link>
                                 </td>
                             </tr>
                         ))
