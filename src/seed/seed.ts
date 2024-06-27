@@ -3,11 +3,11 @@ const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
 
 const recyclers = [
-  { id: 1, names: 'John Dowen', email: "john@example.com", age: 23, address: 'Calle 25 # 73-29, Medellín, Antioquia, Colombia', contact: '+57 3200213832' },
-  { id: 2, names: 'Jane Doe', email: "jane@example.com", age: 30, address: 'Cra 89 # 37-41, Cristóbal, Medellín, Colombia', contact: '+57 3101234567' },
-  { id: 3, names: 'Sam Smith', email: "sam@example.com", age: 27, address: 'Carrera 15 # 27-90, Bombona II, Medellín, Antioquia', contact: '+57 3157654321' },
-  { id: 4, names: 'Alice Johnson', email: "alicia@example.com", age: 22, address: 'Calle 39 # 115-13, El Salado, Medellín, Antioquia', contact: '+57 3209876543' },
-  { id: 5, names: 'Bob Brown', email: "bob@example.com", age: 35, address: 'Cra 89a # 37-82, Cristóbal, Medellín, Colombia', contact: '+57 3001239876' }
+  { names: 'John Dowen', email: "john@example.com", age: 23, address: 'Calle 25 # 73-29, Medellín, Antioquia, Colombia', contact: '+57 3200213832' },
+  { names: 'Jane Doe', email: "jane@example.com", age: 30, address: 'Cra 89 # 37-41, Cristóbal, Medellín, Colombia', contact: '+57 3101234567' },
+  { names: 'Sam Smith', email: "sam@example.com", age: 27, address: 'Carrera 15 # 27-90, Bombona II, Medellín, Antioquia', contact: '+57 3157654321' },
+  { names: 'Alice Johnson', email: "alicia@example.com", age: 22, address: 'Calle 39 # 115-13, El Salado, Medellín, Antioquia', contact: '+57 3209876543' },
+  { names: 'Bob Brown', email: "bob@example.com", age: 35, address: 'Cra 89a # 37-82, Cristóbal, Medellín, Colombia', contact: '+57 3001239876' }
 ];
 
 const materials = [
@@ -33,7 +33,6 @@ async function main() {
   
   await prisma.user.create({
     data: {
-      id: 1,
       email: 'admin@admin.com',
       code: 'xyz123',
     },
