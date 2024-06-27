@@ -9,7 +9,7 @@
     "lint": "next lint",
     "db:push": "prisma db push",
     "seed": "ts-node --transpile-only src/seed/seed.ts",
-    "postinstall": "prisma generate && npm run db:push && npm run seed"
+    "postinstall": "prisma generate"
   },
   "dependencies": {
     "@prisma/client": "^5.15.1",
