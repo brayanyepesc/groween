@@ -12,7 +12,7 @@ async function getData(id: string) {
     }
 }
 
-export default async function ProfileDetails ({ params }: { params: { id: string }}) {
+export default async function ProfileDetails (req:Request, { params }: { params: { id: string }}) {
     if(!NextPublicApiUrl) return null;
     const recycler = await getData(params.id);
     return (
