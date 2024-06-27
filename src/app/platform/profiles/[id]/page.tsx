@@ -4,17 +4,29 @@ import { LuArrowBigLeft, LuArrowUpLeft } from "react-icons/lu";
 import { NextPublicApiUrl } from "@/shared/env";
 
 async function getData(id: string) {
-    const res = await axios.get(`${NextPublicApiUrl}/api/recyclers/${id}`)
-    if (res.status === 200) {
-        return res.data
-    } else {
-        throw new Error('Failed to fetch data')
+    try {
+        const res = await axios.get(`${NextPublicApiUrl}/api/recyclers/${id}`);
+        if (res.status === 200) {
+            return res.data;
+        } else {
+            throw new Error('Failed to fetch data');
+        }
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        return null;
     }
 }
 
-export default async function ProfileDetails (req:Request, { params }: { params: { id: string }}) {
+export default async function ProfileDetails ({ params }: { params: { id: string }}) {
     if(!NextPublicApiUrl) return null;
     const recycler = await getData(params.id);
+    if (!recycler) {
+        return (
+            <main className="bg-white w-full p-2 md:p-10">
+                <h2>Error al cargar los detalles del reciclador</h2>
+            </main>
+        );
+    }
     return (
         <main className="bg-white w-full p-2 md:p-10">
             <div className="flex-row-between">
