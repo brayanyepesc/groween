@@ -4,7 +4,6 @@ import { LuArrowBigLeft, LuArrowUpLeft } from "react-icons/lu";
 import { NextPublicApiUrl } from "@/shared/env";
 
 async function getData(id: string) {
-    console.log('id from getData:', id)
     try {
         const res = await axios.get(`${NextPublicApiUrl}/api/recyclers/${id}`);
         if (res.status === 200) {
@@ -19,7 +18,6 @@ async function getData(id: string) {
 }
 
 export default async function ProfileDetails ({ params }: { params: { id: string }}) {
-    console.log('params from Profile', params)
     if(!NextPublicApiUrl) return null;
     const recycler = await getData(params.id);
     if (!recycler) {
